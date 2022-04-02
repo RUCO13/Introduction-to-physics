@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[paperwidth = 16.14cm, 
+            paperheight = 10cm, 
+            textwidth = 16.14cm,
+            textheight = 10cm]{geometry}
+\usepackage{pgfplotstable}
+\usepackage{amsmath,bm}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,
+	arrows.meta,
+	decorations.pathmorphing,
+	calc,%
+	decorations.pathmorphing,%
+	decorations.markings,
+	fadings,%
+	shadings,%
+	positioning,
+	spy,
+	shapes,
+	shapes.geometric,
+	shapes.arrows,
+	fit,	plotmarks,}
+\usepackage{tikz-dimline}
+\tikzset{fontscale/.style = {font=\relsize{#1}}
+    }
+
+
+    \renewcommand{\refname}{\vspace*{-0.3cm}\normalfont\selectfont\footnotesize Referencias} 
+ 
+\begin{document}
+\thispagestyle{empty}
+\bibliographystyle{ieeetr}
+\nocite{*}
+    \begin{tikzpicture}[overlay,remember picture,]
+
+\draw[fill=orange, fill opacity=0.3,draw=black](-0.55cm,-0.8cm)--(16cm,-0.8cm)--(16cm,0.29cm)--(-0.55cm,0.29cm)--cycle;
+
+
+\node[anchor=north west,text width=15.2cm](logo1) at (current page.north west) {\includegraphics[scale=7]
+{figures/logo.png}};
+\node[anchor=north,text width=7cm, align=center,scale=0.9](title) at (current page.north) {F\'isica 1\\ Ecuaciones de Energ\'ia - Momento\\O. Ruiz-Cigarrillo};
+
+
+
+\node[text width=6cm,anchor=north west,yshift=-1.25cm,draw,scale=0.8](n1) at (current page.north west){Ecuaciones de trabajo
+\begin{flalign}
+     W &= \vec{F}\cdot\Delta \vec{s}\\
+     W &= F\Delta s \cos(\theta)
+\end{flalign}
+};
+\node[text width=6cm,anchor=north,yshift=-1mm,draw,scale=0.8](n2) at (n1.south){
+Energia cinetica y el principio del trabajo y la energ\'ia.
+\begin{flalign}
+    K &= \dfrac{1}{2}mv^2\\
+    W_{net}&=\Delta K = \dfrac{1}{2} mv_{f}^2-\dfrac{1}{2}mv_{i}^2
+\end{flalign}
+};
+
+\node[text width=6cm,anchor=north,yshift=-1mm,draw,scale=0.8,align=justify](n3) at (n2.south){
+    Una \textbf{fuerza conservativa} es aquella para la cual el trabajo realizado
+    por la fuerza al mover un objeto de una posición a otra depende só-
+    lo de las dos posiciones, y no de la trayectoria seguida.
+};
+
+\node[text width=6cm,anchor=north west,xshift=1mm,draw,scale=0.8,inner sep=4.5mm](n4) at (n1.north east){
+Energ\'ia Potencial gravitaciones y energ\'ia potencial elastica. 
+\begin{flalign}
+    U_{grav} &= mgy\\
+    U_{el} &= \dfrac{1}{2}kx^2
+\end{flalign}
+Cuando sólo actúan fuerzas conservativas, la energía mecánica
+total $E$,
+\begin{flalign}
+    E = K + U
+\end{flalign}
+Si actuan otro tipos de energ\'ia, la ley de conservaci\'on de energ\'ia
+\begin{flalign}
+    \Delta K + \Delta U + \Delta (\text{otros})=0
+\end{flalign}
+La \textbf{potencia} se define como la tasa a la que se efectúa trabajo,
+    o la tasa a la cual la energía se transforma de una forma a otra:
+\begin{flalign}
+    P&=\dfrac{dW}{dt} = \dfrac{dE}{dt}\\
+    P&=\vec{F}\cdot\vec{v}
+\end{flalign}
+};
+
+\node[text width=6cm,minimum height=7cm,anchor=north west,xshift=1mm,draw,scale=0.8,inner sep=3.5mm,](n5) at (n4.north east){
+La  \textbf{cantidad de movimiento lineal} o \textbf{momento lineal} $\mathbf{\vec{p}}$, de un objeto se define como el producto de su masa por su velocidad,
+\begin{flalign}
+    \vec{\mathbf{p}}=m\vec{\mathbf{v}}
+\end{flalign}
+Cuando la fuerza neta externa sobre un sistema de objetos es
+cero, la cantidad de movimiento total permanece constante. Ésta es la
+ley de conservación de la cantidad de movimiento.
+La ley de la conservación de la cantidad de movimiento es
+muy útil al tratar con la clase de eventos conocidos como colisiones.
+El \textbf{impulso} de una fuerza sobre un objeto se
+define como
+\begin{flalign}
+    \vec{\mathbf{J}} = \Delta \vec{\mathbf{p}}
+\end{flalign}
+La cantidad de movimiento total se conserva en cualquier colisión:
+\begin{flalign}
+    \vec{\mathbf{p}}_{A} +\vec{\mathbf{p}}_{B} = \vec{\mathbf{p}}^{\prime}_{A}+\vec{\mathbf{p}}^{\prime}_{B}
+\end{flalign}
+
+
+
+};
+
+\node[fill=blue,fill opacity=0.2, anchor=north, text width=6cm, scale=0.8,yshift=-1mm]at (n3.south) 
+{   
+    \parbox{6cm}{
+    \footnotesize
+    \vspace*{-0.45cm}
+    \bibliography{refs.bib}}
+};
+
+\node[anchor=north, text width=6cm, scale=0.8,yshift=-1mm,draw=black,text=black]at (n3.south) 
+{   
+    \parbox{6cm}{
+    \footnotesize
+    \vspace*{-0.45cm}
+    \bibliography{refs.bib}}
+};
+
+
+
+
+
+
+
+
+
+
+
+\end{tikzpicture}
+\end{document}
